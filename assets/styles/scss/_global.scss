@@ -1,0 +1,2509 @@
+/************************************************
+
+Stylesheet: Global Stylesheet
+
+*************************************************/
+
+// TESTING LOCATIONS DROP MENU
+// .float-right{
+//   float: right;
+// }
+/* .fas{
+ font-size: 1.2rem;
+ line-height: 22px !important;
+ padding: 0 4px;
+} */
+#country-switcher{
+   display: inline-block;
+}
+#country-switcher label, #country-switcher ul li{
+  display: block;
+  padding: 15px 20px;
+}
+#country-switcher ul li{ 
+  width: 200px;
+}
+#country-switcher label:hover, #country-switcher ul li:hover{
+  background: $pregel-blue;
+  color: white;
+  cursor: pointer;
+}
+#country-switcher label{
+  width: 100px;
+  color: $pregel-blue;
+  position: relative;
+  z-index: 2;
+  border: 2px solid $pregel-light-gray;
+}
+#country-switcher label:after {
+	display: inline-block;
+    width: 0;
+    height: 0;
+    border: 6px inset;
+    content: "";
+    border-bottom-width: 0;
+    border-top-style: solid;
+    border-color: #05c3de transparent transparent;
+    right: 5px;
+    left: auto;
+    margin-top: -3px;
+	}
+#country-switcher label:hover:after {
+    border-color: #fefefe transparent transparent;
+    }
+#country-switcher input{
+  display: none;
+}
+#country-switcher input ~ div{
+  position: relative;
+  visibility: hidden;
+   /* testing */
+  display:none;
+  opacity: 0;
+  top: -20px;
+  z-index: 1;
+}
+#country-switcher input:checked + label{
+  background: $pregel-blue;
+  color: white;
+}
+
+#country-switcher input:checked ~ div{
+  visibility: visible;
+  /* testing */
+  display:block;
+  opacity: 1;
+  top: 0;
+}
+
+#country-switcher ul.site-switch {
+	// max-height: 280px;
+	// overflow-y: auto;
+	margin-left: 0;
+}
+#country-switcher img.flag-icon {
+		width: 30px; // when size is final - go back and resize actual imgs
+		margin-right: 10px;
+	}
+
+#country-switcher .location-wrapper {
+	padding: 30px;
+	background: $white;
+	border: 4px solid $pregel-light-gray;
+	overflow:auto;
+	max-height: 300px;
+}
+
+#country-switcher .animate {
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -ms-transition: all .3s;
+  transition: all .3s;  
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden; /* Chrome and Safari */
+  -moz-backface-visibility:hidden; /* Firefox */
+  -ms-backface-visibility:hidden; /* Internet Explorer */
+}
+#country-switcher label span {
+	display:none;
+}
+//for medium up
+ @include breakpoint(1300px) {
+#country-switcher label span {
+	display:inline-block;
+}
+#country-switcher label {
+	width:200px;
+}
+}
+// END TESTING LOCATIONS DROP MENU
+
+// *** refactor - legacy nav styles moved from old main *** //
+/* custom menu styles - moving to master - need to clean up / merge into nav styles below*/
+
+// .admin-bar #pglogo2 {
+// 	top:40px;
+// }
+
+.pg-alt-background {
+	background: $pregel-light-gray;
+}
+
+/* magento header links */
+ul.header.links li {
+	display:inline;
+}
+/*building out magento search styles */
+.block-search .nested {
+    display: none;
+}
+/*icon in search bar*/
+.block-search {
+	float: left;
+}
+.block-search .actions {
+	float: left;
+}
+.block-search .field.search {
+	float: left;
+}
+.block-search .action.search:before {
+    background: url("https://pregel3.com/wp-content/themes/pregel/assets/images/search.svg");
+    width: 24px;
+    height: 24px;
+    content: '';
+    margin: 0;
+    vertical-align: top;
+    display: inline-block;
+    overflow: hidden;
+    speak: none;
+    text-align: center;
+    cursor: pointer;
+  }
+ .block-search .action.search span {
+ 	display: none;
+ }
+ .block-search .field.search label {
+ 	display: none;
+ }
+ .block-search .block-title {
+ 	display: none;
+ }
+/*end search styles*/
+// minicart styles
+.minicart-wrapper .action.showcart:before {
+    background: url("https://pregel3.com/wp-content/themes/pregel/assets/images/cart.svg");
+    width: 24px;
+    height: 24px;
+    content: '';
+    margin: 0;
+    vertical-align: top;
+    display: inline-block;
+    overflow: hidden;
+    speak: none;
+}
+.minicart-wrapper span.text {
+	display:none;
+}
+// end minicart styles
+
+.top-bar {
+	// padding: 3rem;
+}
+.top-bar.sticky.is-stuck {
+	padding: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+	.top-bar {
+		padding: 0.5rem;
+	}
+}
+.nav-table {
+	display: table;
+}
+.nav-table-row {
+	display: table-row;
+}
+// this makes mega menu style
+// .nav-table ul li {
+// 	display: table-cell;
+// }
+#pglogo2 {
+    position: absolute;
+    // top: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 200px !important;
+    z-index: 1006;
+    background: white;
+    border: transparent .2px solid !important;
+    // padding: 14px 30px 10px;
+    padding: 0;
+    border-radius: 4px;
+ }
+ #menu-main-left {
+	padding-left: 9rem;
+}
+ #top-bar-menu a {
+ 	font-size: 1.2rem;
+}
+
+ /* end custom menu*/
+ #menu-main-right-1 {
+	float:left;
+}
+/* fake magento megamenu for now, delete this when can pull entire magento menu into wordpress */
+/* add arrows */
+
+a {
+	-webkit-transition: color 300ms ease-out;
+    -moz-transition: color 300ms ease-out;
+    transition: color 300ms ease-out;
+}
+.notice-bar {
+	background: $pregel-blue;
+	border-top: 4px solid $pregel-blue;
+	border-bottom: 4px solid $pregel-blue;
+}
+i.fi-zoom-in {
+	font-size: 24px;
+}
+.notice-bar .row {
+	max-width: none;
+}
+.notice-bar .mlp_widget {
+	float: left;
+	width: 100%;
+	h4 {
+		font-size: 1rem;
+		font-family: $body-font-family;
+		float: left;
+	}
+}
+/* magento product search  */
+#search_mini_form {
+	float:right;
+}
+.form-search .action {
+    width: 30px;
+    float: right;
+}
+.form-search {
+    position: relative;
+    float: left;
+    /* width: 320px; */
+    height: 30px;
+    .search-box {
+    	float: left;
+    }
+}
+.form-search .button {
+    background: transparent;
+    width: 40px;
+    height: 45px;
+    line-height: 2.2rem;
+    border: none;
+    padding: 0;
+    margin: 0;
+    float: left;
+}
+.form-search .input-text {
+    box-shadow: none !important;
+    height: 30px;
+    padding: 0;
+    border: none;
+    margin: 0;
+}
+.form-search label {
+	display: none;
+	color: #444;
+}
+input.placeholder {
+&::-webkit-input-placeholder { 
+  color: #4c4c4c;
+}
+&::-moz-placeholder { 
+  color: #4c4c4c;
+}
+&:-ms-input-placeholder { 
+  color: #4c4c4c;
+}
+&:-moz-placeholder { 
+  color: #4c4c4c;
+}
+}
+.input-text {
+	color: #4c4c4c;
+}
+/* end magento product search  */
+// #top-bar-menu .is-down-arrow > a:after {
+// 	position: relative;
+//     float: right;
+//     padding: 0;
+//     top: 16px;
+//     right: 5px;
+//     content: "";
+//     border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #cecece;
+//     border-style: solid;
+//     border-width: 0 0 7px 6px;
+// }
+// #top-bar-menu li ul.submenu li a {
+// 	border-left : 4px solid #fff;
+// 	 &:hover {
+// 	border-left: 4px solid #5091cd;
+// 	}
+// }
+//  .arrow-box {
+//  	margin-top: 9px;
+//     position: relative;
+// }
+/* these are for the top arrow */
+// .arrow-box:before {
+//     content: "";
+//     width: 100%;
+//     height: 20px;
+//     background: rgba(255,255,255,0);
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+// }
+// #top-bar-menu .is-down-arrow.is-active > a:before {
+//     content: "";
+//     position: absolute;
+//     top: 62px;
+//     float: left;
+//     border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #cecece;
+//     border-style: solid;
+//     border-width: 6px;
+//     width: 0;
+//     height: 0;
+//     margin-left: 32px;
+//     z-index: 101;
+// }
+/* target products dropdown - currently menu-item 181 */
+// #top-bar-menu li.menu-item-181 ul.submenu {
+// 	&.first-sub {
+// 		left: -150px;
+// 	}
+// 	ul {
+// 		line-height: .6rem;
+// 	}
+// 	.menu > li > a {
+// 		padding: .2rem .2rem .2rem .4rem;
+// 	}
+// 	> li > a {
+// 		padding: .2rem .2rem .2rem .8rem;
+// 	}
+// 	width: 1200px;
+// 	padding: 4px 10px 10px 0;
+// 	line-height: 1rem;
+// 	li a {
+// 		font-family: $header-font-family;
+// 		font-size: 1.8rem;
+//    		color: #444;
+//    		font-weight: normal;
+//    		border-left: none;
+//    		&:hover {
+//    			// color: $pregel-light-blue;
+//    			color: $pregel-blue;
+//    		}
+// 	}
+// 	> li {
+// 		  display: inline-block !important;
+//     	  vertical-align: top;
+//           width: 18% !important;
+//           z-index: 1;
+//           border-left: 1px solid #cecece;
+// 	}
+// 	> li:first-child {
+// 		border-left: none;
+// 		padding-left:0;
+// 	}
+// 	li ul li {
+// 		width: 100% !important;
+// 	}
+// 	li ul li a {
+// 		font-size: 1rem;
+// 		line-height: 1rem;
+// 		color: #999;
+// 		font-weight: normal;
+// 		border-left : 4px solid #fff;
+// 		&:hover {
+// 			color: #777;
+// 			border-left: 4px solid $pregel-blue;
+// 		}
+// 	}
+// }
+
+/* end fake magento megamenu */
+/* testing - for the drop down cart in menu from magento */
+/* .top-cart-right {}
+
+#wp-top-cart {
+	float:left;
+}
+ul#wp-top-cart li > a {
+	padding: 0.5rem 1.5rem 0.2rem;
+}
+.bg-box {
+    position: relative;
+    display: inline-block;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 14px;
+    width: 100%;
+}
+.cart-dropdown {
+    right: 0 !important;
+    overflow: hidden;
+    padding: 10px;
+}
+.cart-dropdown .dropdown-title {
+    position: relative;
+    margin: 0;
+    padding: 0 14px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #f2f2f2 !important;
+    font-size: .875rem;
+    font-weight: 600;
+    color: #000000;
+}
+.cart-dropdown .subtotal {
+    line-height: 36px;
+    margin: 0;
+    color: #999999;
+    font-size: .75rem;
+}
+.cart-dropdown .subtotal .price {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333333;
+    padding: 0 0 0 4px;
+}
+.cart-dropdown li a.button.sign-in {
+    position: absolute;
+    height: 32px;
+    font-size: 1rem;
+    line-height: 32px;
+    padding: 0 32px;
+    margin: 0;
+    top: 14px;
+    right: 14px;
+}
+#top-bar-menu .cart-dropdown li a.button.sign-in {
+	color: #fff;
+}
+.top-bar .sup {
+    display: block;
+    position: absolute;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 300;
+    top: 0;
+    width: 120px;
+    text-transform: none;
+}
+.top-bar span + .sup {
+    left: 51px;
+}
+.cart-dropdown .arrow-box {
+    width: 322px !important;
+    margin-top: 9px;
+    padding: 0 0 8px;
+}
+.fi-shopping-cart {
+	color: #cecece;
+	font-size: 24px;
+	margin-right: 4px;
+} */
+/* end drop-down cart from magento */
+/* this is for the contact button top bar call out */
+/*********************
+GENERAL STYLES
+*********************/
+/*********************
+LINK STYLES
+*********************/
+a, a:visited {
+/* Mobile tap color */
+	&:link {
+		//Highlight links on iOS, Similar to :hover for mobile devices.
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+}
+/*********************
+H1, H2, H3, H4, H5 P STYLES
+*********************/
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+	/* Removing text decoration from all headline links */
+	a {
+		text-decoration: none;
+	}
+	/* Add alternate header font */
+	&.alt {}
+}
+h1, .h1 {}
+h2, .h2 {}
+h3, .h3 {}
+h4, .h4 {}
+h5, .h5 {}
+/*********************
+SLIDER STYLES
+*********************/
+.slide-head h2 {
+	font-size: 90px;
+	color: #fff;
+	font-family: $header-font-family;
+    letter-spacing: 0.0625em;
+}
+.slide-subhead h3 {
+	font-size: 36px;
+	color: #fff;
+}
+/*********************
+HEADER STYLES
+*********************/
+.admin-bar .top-bar.sticky.is-stuck {
+	margin-top: 30px !important;
+}
+.header {
+	position: relative;
+	z-index: 1004;
+	ul.off-canvas-list li {
+		list-style: none;
+	}
+	.top-bar {
+		width: 100%;
+		//height: 110px;
+		border-bottom: 1px #eee solid;
+		.split-left, .split-right {
+			padding-top: 15px;
+		}
+	}
+	.logo {
+		 margin: 15px auto 0;
+		img {
+			display: block;
+            margin: 0 auto;
+		}
+	}
+}    
+/*********************
+NAVIGATION STYLES
+*********************/
+/* the mobile icon */
+.menu-icon::after {
+    background: #6ba0d3;
+    box-shadow: 0 7px 0 #6ba0d3, 0 14px 0 #6ba0d3;
+}
+.menu-icon:hover::after {
+    background: #deeaf7;
+    box-shadow: 0 7px 0 #deeaf7, 0 14px 0 #deeaf7;
+}
+.m-menu-icon {
+	position: absolute;
+	top:10px;
+	left:10px;
+}
+/* the mobile header */
+.top-bar-right{
+	@include breakpoint('medium') {
+		width: 100%;
+	}
+	 ul.menu li {
+	width: 50%;
+	&.m-menu-icon {
+		text-align: right;
+		@include breakpoint('medium') {
+			float: right;
+		}
+	}
+	&.mobile-logo {
+		@include breakpoint('medium') {
+			float: left;
+		}
+		 img {
+	// width: 150px;
+	padding: 20px;
+	@include breakpoint('medium') {
+		height: 90px;
+	}
+	}
+}
+}
+}
+/* the mobile menu  */
+.off-canvas ul li {
+	border-bottom: 1px solid #ccc;
+	border-left: 8px solid $pregel-blue;
+}
+.off-canvas ul li:hover {
+	background: $pregel-light-gray;
+	}
+.off-canvas .is-drilldown-submenu-parent > a::after {
+	border-color: transparent transparent transparent #ffffff;
+}
+.off-canvas .js-drilldown-back::before {
+	border-color: transparent #ffffff transparent transparent;
+}
+.off-canvas {
+	/* background: #6ba0d3; */
+	background: #fff;
+	color: #FFF;
+	height: 100%;
+}
+.off-canvas a {
+	// color: #FFF;
+	color: #555;
+}
+.is-accordion-submenu-parent > a::after {
+	border-color: #FFF transparent transparent;
+}
+#mobile-wp-prod-menu .menu > li > a {
+    display: block;
+    padding: 0.2rem 1.7rem;
+    line-height: 1;
+}
+.off-canvas >ul > li {
+	border-bottom: 1px solid #FFF;
+}
+li.group-title {
+	list-style: none;
+	background: #deeaf7;
+	color: #636466;
+}
+ul.mobile-menu-divider {
+	margin-left: 0;
+}
+.is-drilldown-sub {
+	background: #6ba0d3;
+	}
+.off-canvas .form-search label {
+	color: #FFF;
+}
+.off-canvas .form-search input {
+	color: #FFF;
+}
+.off-canvas .form-search .action {
+	width: 40px;
+}
+.off-canvas .form-search .action i {
+	color: #FFF;
+	}
+ul.top-simple-menu li {
+	padding: 0 8px;
+}
+/* the search box */
+  .off-canvas .form-search input {
+  	background: transparent !important;
+  }
+  .form-search {
+  	margin-bottom: 12px;
+  	.search-box {
+  		border-bottom: 0.5px solid #f4f4f4
+   	}
+  	::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	  color: #f4f4f4;
+	}
+	::-moz-placeholder { /* Firefox 19+ */
+	  color: #f4f4f4;
+	}
+	:-ms-input-placeholder { /* IE 10+ */
+	  color: #f4f4f4;
+	}
+	:-moz-placeholder { /* Firefox 18- */
+	  color: #f4f4f4;
+	}
+  }
+/* new styles for top bar navigation */
+ul#menu-secondary-top-bar {
+	background-color: transparent;
+	li a {
+	padding: 0.3rem 1rem 0.2rem;
+	}
+}
+ul#wp-top-cart {
+	background-color: transparent;
+}
+/* desktop secondary top nav */
+ul.loc-menu {
+	margin-left: 40px;
+	list-style: none;
+	text-align: left;
+	li.loc-title {
+		font-weight: 700;
+		color: $pregel-blue;
+	}
+}
+.loc-icon {
+	padding-right: 10px;
+}
+.secondary-top-bar-left {
+	width: 50%;
+	float:left;
+}
+.secondary-top-bar-right {
+	float:right;
+}
+.logged-in .secondary-top-bar-search {
+	top: 30px;
+	}
+.secondary-top-bar-search {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 250px;
+	padding-top: 4px;
+	form {
+		input {
+			display: inline-block;
+			width: 150px;
+			float: left;
+			height: 30px;
+		}
+		button.search-submit {
+			padding: .4rem;
+		}
+	}
+}
+ul.top-simple-menu {
+	list-style: none;
+	text-align: left;
+	a {
+		padding:0;
+	}
+	li {
+		display: inline-block;
+		padding: 0 30px;
+		vertical-align: top;
+		ul {
+			display: block;
+			li {
+				display: block;
+				font-weight: 400;
+				padding: 0;
+			}
+		}
+	}
+}	   
+#second-top-bar-menu {
+	position: relative;
+	z-index: 1005;
+	background-color: $white;
+	// height: 45px;
+	//provides space below logo
+	height: 85px;
+	padding: 6px 0;
+    .is-dropdown-submenu li a {
+    	color: $dark-gray;
+    	&.button {
+    		color: $white;
+    	}
+    }
+}
+/* make room for the admin bar */
+.admin-bar span.nav-close {
+	top: 40px; 
+}
+#second-top-bar-menu a {
+  color: $pregel-blue;
+  font-size:1em;
+  line-height: 1.25em;
+  text-decoration: none;
+}
+#second-top-bar-menu a:hover {
+  color: $pregel-light-blue;
+}
+#titlebar label span {
+  color: #fff;
+  font-size: 1rem;
+  opacity: 0.5;
+  font-weight: 700;
+}
+/* end desktop secondary top nav */
+/* the main nav */
+.top-bar {
+	.title-area {
+		z-index: 1;
+	}
+	input {
+		/* max-width: 140px; */
+		width: 100%;
+	}
+} 
+#top-bar-menu {
+	a {
+		font-family: $header-font-family;
+		font-size: 1.5rem;
+		// Only affects medium screens and smaller
+ 		 @include breakpoint(large down) { 
+ 		 	font-size: 1.25rem;
+  		}
+		/* testing reversed menu colors */
+		color: #444;
+		text-transform: uppercase;
+		&:hover {
+		/* testing reversed menu colors */
+		color: $pregel-mid-blue;
+		}
+		&:active {
+		/* testing reversed menu colors */
+		color: $pregel-mid-blue;
+		}
+	}
+	.submenu a {
+		font-family: $header-font-family;
+		font-size: 1rem;
+	}
+	&.sticky.is-stuck {
+		#wp-top-cart ul li a {
+			border: none;
+			padding: 0.2rem 1.7rem;
+		}
+        .is-down-arrow.is-active > a:before  {
+			top: 30px;
+		     }
+			height: 50px;
+			background: #fff;
+			ul li a {
+				font-size: 1rem;
+				padding: 0.2rem 1.7rem;
+			}
+			ul li ul li a {
+				font-size: 1rem;
+				padding: 0.7rem 1.7rem;
+			}
+			ul li.menu-item-181 ul li a {
+				font-size: 1.8rem;
+				padding: 0.7rem 1.7rem;
+			}
+			ul li.menu-item-181 ul li ul li a {
+				font-size: 1rem;
+				padding: 0.7rem 1.7rem;
+			}
+			.logo {
+				margin-top: 0;
+				img {
+				height: 40px;
+				}
+		    }
+			.split-left, .split-right {
+			padding-top: 4px;
+		}
+		}
+}
+.off-canvas-list {
+	ul {
+		margin-left: 0;
+		li {
+			a {
+				border-bottom: 0px;
+			}
+		}
+		.dropdown {
+			margin-left: 20px;
+		}
+	}
+}
+ul.dropdown.menu > li > a {
+	padding: 0.8rem 1.5rem 1.7rem;
+}
+.dropdown.menu .submenu.first-sub {
+	left: -50px;
+	padding-top: 20px;
+	}
+#second-top-bar-menu .is-dropdown-submenu li a:hover {
+	color: $pregel-blue;
+	font-weight: 700;
+}
+/* end the main nav */
+// *** end legacy nav styles moved from old main *** //
+
+// *** legacy page styles moved from old main *** //
+/*********************
+HOME PAGE STYLES
+*********************/
+/* this is the product navigation bar */
+#product-bar {
+	// background: $pregel-light-blue;
+	background: $pregel-light-gray;
+	margin-top: 5px;
+	// make click area fill div
+	a {
+		display: inline-block;
+		width:100%;
+		height:100%;
+	}
+	.link {
+		background-repeat: no-repeat;
+		background-position: right;
+		background-size: contain;
+	    // padding: 4% 0 4% 4%;
+	    border: 3px solid $white;
+	}
+	.gelato {
+		background-image: url(https://pregel3.com/wp-content/themes/pregel/assets/images/gelateria.png);
+	}
+	.pastry {
+		background-image: url(https://pregel3.com/wp-content/themes/pregel/assets/images/pasticceria.png);
+	}
+	.froyo {
+		background-image: url(https://pregel3.com/wp-content/themes/pregel/assets/images/yogurteria.png);
+	}
+	.bev {
+		background-image: url(https://pregel3.com/wp-content/themes/pregel/assets/images/new-bev-icon.png);
+		border-right: none;		
+	}
+	h3 {	
+		font-size: 1rem;
+		line-height: 2.5rem;
+		font-weight: 300;
+		text-transform: uppercase;
+		padding: 4% 0 4% 4%;
+	}
+}
+.link:hover {
+	background: $pregel-blue;
+	h3 {
+	color: $white;
+	}
+}
+.ms-container {
+	background-image: url(../images/pattern-leaf.jpg);
+}
+.homeGrid {
+	/* whitespace around grid - could do this another way */
+	border: 20px solid #fff;
+	 h4.widgettitle {
+	  	background: $pregel-blue;
+	  	color: #fff;
+	  	text-align: center;
+	  	margin-bottom:0;
+	  }
+	  h4.widgettitle a {
+	  	background: $pregel-blue;
+	  	color: #fff;
+	  }
+}
+.home-grid-row {
+	max-width: 1440px;
+}
+#homeGridOne {}
+#homeGridTwo {}
+#homeGridThree {}
+#homeGridFour {}
+#homeGridFive {}
+#homeGridSix {}
+#gelato-shop {
+	height: 150px;
+    overflow: hidden;
+    background: url("https://pregel3.com/wp-content/themes/pregel/assets/images/Beverages_HeaderGraphic.jpg");
+    border-top: $white 4px solid;
+}
+/* Caption component for image widget - homepage */
+.pg-caption {
+    position: relative;
+    overflow: hidden;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            img {
+            	display: block;
+			    min-width: 100%;
+			    max-width: 100%;
+			    height: auto;
+				}
+     }
+.pg-caption::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: transparent;
+    transition: background .35s ease-out;
+}
+.pg-caption:hover::before {
+    background: rgba(255, 255, 255, .8);
+}
+.widget_sp_image {
+    display: block;
+    min-width: 100%;
+    max-width: 100%;
+    height: auto;
+    /* border: 10px solid $pregel-light-blue; */
+    border: 10px solid $pregel-light-gray;
+}
+.widget_sp_image-description {
+    padding: 15px;
+}
+/* top down slide effeect */
+.pg-text-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 2px 2px; 
+    color: #444;
+    font-weight: bold;
+    display: none;
+    h5 {
+	  	color: #fff;
+	  	padding-left: 1rem;
+	  }
+	p{
+	  	padding-left: 1rem;
+	  }
+}
+.pg-caption:hover .pg-text-overlay {
+    display: block;
+}
+.pg-text-overlay .widgettitle {
+	position: absolute;
+	bottom: 0;
+	left:0;
+	right:0;
+	margin-top: 10px;
+	padding-left: 1rem;
+}
+.pg-caption:hover .pg-text-overlay .widgettitle {}
+#home-bottom-banner {
+	margin-top: 5px;
+}
+#sidebar1 {
+	border-top: 2em $pregel-blue solid;
+	background-color: $pregel-light-blue;
+	margin-top: 1em;
+	.widgettitle {
+		display: none;
+	}
+	.search-field {
+		margin-top: 1rem;
+		padding-top: .85rem;
+		width: 100% !important;
+	}
+	.screen-reader-text {
+		display: none;
+	}
+	.search-field:focus {
+		border-color: $pregel-mid-blue;
+	}
+	.postform {
+		outline-color: $pregel-mid-blue;
+	}
+}
+/*********************
+ABOUT US PAGE STYLES
+*********************/
+/* ABOUT US Content Sections  */
+#inner-about-content {}
+/* Container div Section for About Us section */ 
+.pg-about-content {}
+#pg-about-content-row {
+	padding: 2em 0;
+}
+#title-banner {
+	margin: 1.5rem 0;
+}
+/* Alternating container div Section color */ 
+.alt-background-light-blue {
+// background-color: $pregel-light-blue;
+background-color: $pregel-light-gray;
+}
+/* About Me Title section */
+#pg-about-banner-container {
+    height: 267px;
+   /*  background: url(../images/WhiteBackground.jpg); */
+    background: url(https://pregel3.com/wp-content/themes/pregel/assets/images/pattern-leaf.jpg);
+    background-repeat: repeat;
+    background-position: center center;
+}
+#pg-about-banner {
+	background-repeat: no-repeat;                     
+    background-position: center center; 
+    height: 267px;
+}
+.page-id-131 #pg-about-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/ABOUTUS_History_Header_iso.png");
+}
+/* Our Team Banner */
+.page-id-62 {
+	#pg-about-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/ABOUTUS_CAREERS_Header_iso.png");
+    }
+    #pg-about-section-two {
+		display: none;
+	}
+}
+/* Product Manufacturing Standards  */
+.page-id-126 {
+    #pg-about-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/ABOUTUS_ProductManufacturing_Header_iso.png");
+	}
+    #pg-about-section-three {
+    	background-color: white !important;
+    }
+}
+/* Distribution and Warehousing Page  */
+.page-id-64 #pg-about-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/ABOUTUS_DistributionWarehousing_Header_iso.png");
+}
+/* Around the World Page  */
+.page-id-66 #pg-about-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/ABOUTUS_AroundWorld_Header_iso.png");
+}
+/* Marco  */
+.page-id-39 #pg-about-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/ABOUTUS_MarcoCasol_Header_iso.png");
+}
+/* History  */
+.page-id-37 #pg-about-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/ABOUTUS_History_Header_iso.png");
+}
+/* Main About Me Page  */
+.page-id-20 #pg-about-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/ABOUTUS_History_Header_iso.png");
+}
+/* Vision and Values */
+.page-id-123 #pg-about-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/ABOUTUS_VisionAndValues_Header_iso.png");
+}
+/* Locations */
+.page-id-405 #pg-about-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/ABOUTUS_AroundWorld_Header_iso.png");
+}
+/* Privacy Policy */
+.page-id-617 #pg-about-banner-container {
+	display: none;
+	#pg-about-banner {
+		display: none;
+	}
+}
+/* Terms of Use */
+.page-id-619 #pg-about-banner-container {
+	display: none;
+	#pg-about-banner {
+		display: none;
+	}
+}
+/* Terms of Use */
+.page-id-621 #pg-about-banner-container {
+	display: none;
+	#pg-about-banner {
+		display: none;
+	}
+}
+/* About Me section 1 */
+#pg-about-section-one {
+	min-height: 300px; 
+}
+/* About Me section 2 */
+#pg-about-section-two {
+	min-height: 300px;	 
+}
+/* Testimonial */
+#pg-about-testimonial {
+	min-height: 275px;
+	#pg-testimonial-container {
+		width: 200px;
+	    height: 200px;
+	    position: relative;
+	    overflow: hidden;
+	    -webkit-border-radius: 50%;
+	    -moz-border-radius: 50%;
+	    -ms-border-radius: 50%;
+	    -o-border-radius: 50%;
+	    border-radius: 50%;
+	    border: $pregel-blue solid 2px;	
+    }
+}
+.page-id-37 #pg-testimonial-container {
+    background: url("http://pregel2.com/wp-content/uploads/2016/03/1_spoonful.png");
+}
+.page-id-39 #pg-testimonial-container {
+    background: url("http://pregel2.com/wp-content/uploads/2016/09/Marco-22-copy-8.jpg");
+    background-size: contain;
+} 
+/* About Me section 3 */
+#pg-about-section-three {
+	min-height: 300px;
+}
+/* Body Banner Break Section  */
+.parrallax {
+  height: 300px;
+  background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/Variegates_Toppings_headerGraphic.jpg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/* Vision and Values */ 
+.page-id-123 .parrallax {
+  height: 300px;
+  background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/2014-pregel-exterior.jpg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/* Product Manufacturing Standards */
+.page-id-126 .parrallax {
+  height: 300px;
+  background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/Pastry_Bases_Instant_Graphic.jpg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/* Locations */
+.page-id-405 .parrallax {
+  height: 300px;
+  background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/2014-pregel-exterior.jpg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/* Resources */
+.page-id-49 .parrallax {
+  height: 300px;
+  background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/Variety.jpg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.parrallax-container {
+	width: 100%;
+	margin: 0 auto;
+}
+/* About Me section 4 */
+#pg-about-section-four {
+	min-height: 300px;
+}
+/*********************
+Career Opportunties PAGE STYLES
+*********************/
+/* This is to keep the last job post from floating right */
+#pg-jobs-post-section {
+	.columns:last-child:not(:first-child) {
+	float:none !important;  
+   }
+}
+#pg-jobs-post-section {
+	min-height: 300px;
+	padding: 2em 1em;
+}
+#job-post-title {
+	margin: 1em auto;
+	padding: 1em auto;
+}
+/*********************
+SINGLE JOB POST PAGE STYLES
+*********************/
+#pg-job-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/ABOUTUS_CAREERS_Header_iso.png");
+	background-repeat: no-repeat;
+	background-size:     cover;                     
+    background-position: center center; 
+    height: 267px;
+}
+#single-job-post-container {
+	margin: 4rem auto;
+}
+/*********************
+NEWS FEED PAGE STYLES
+*********************/
+@-webkit-keyframes newsbanner {
+	0% {
+      opacity: 0.7;
+    }
+    5% {
+      opacity: 1;
+    }
+    100% {
+      transform: scale3d(1.25, 1.25, 1.25) translate3d(-90px, -20px, 0px);
+      animation-timing-function: ease-in;
+      opacity: 1;
+    }
+}
+/*Button Font Weight*/ 
+.button {
+	font-weight: bold;  
+}
+#featured-image-banner-container {
+	position: relative;
+    overflow: hidden;
+    height: 400px;
+    //@include small-tablet {
+    @include breakpoint(medium) {
+		height: auto !important;
+    }
+    //@include small-screen {
+    @include breakpoint(medium) {
+	    height: auto !important;
+    }
+    #featured-image-banner {
+    	-webkit-animation: newsbanner 20s forwards;
+    	 animation: newsbanner 20s forwards;
+	    //@include small-tablet {
+	    @include breakpoint(medium) {
+	    	-webkit-animation: none !important;
+	    	 animation: none !important;
+	    }
+	    //@include small-screen {
+	    @include breakpoint(medium) {
+	    	-webkit-animation: none !important;
+	    	 animation: none !important;
+	    }	 
+    } 
+}
+#pg-featured-article-banner {
+    // background-color: $pregel-light-blue;
+    background-color: $pregel-light-gray;
+}
+#featured-article-title-container {
+    /* background-color: $pregel-light-blue; */
+    background-color: $pregel-light-gray;
+}
+#pg-news-container {
+	margin: 2.5rem auto;
+}
+#pg-news-bottom-section {
+	margin: 2.5em auto;
+}
+#sidebar-news {
+	border-top: 2em $pregel-blue solid;
+	// background-color: $pregel-light-blue;
+	background-color: $pregel-light-gray;
+	.search-field {
+		margin-top: 1rem;
+		padding-top: .85rem;
+		width: 100% !important;
+	}
+	.screen-reader-text {
+		display: none;
+	}
+	.search-field:focus {
+		border-color: $pregel-blue;
+	}
+	.postform {
+		outline-color: $pregel-blue;
+	}
+}
+#news-grid-feed {
+	margin-top: 1em;
+}
+#pg-news-cards {
+	margin-bottom: 2em;
+	transition: 400ms all ease-out;
+	height: 400px;
+    .entry-content {
+    	p a {
+    		background: $pregel-blue;
+    	}
+    	p a:hover {
+    		background: $pregel-blue;
+    	}
+    }
+    .news-card-img-container {
+    	min-height: 20vh;
+    	max-height: 20vh;
+    }
+    .news-card-img {
+    	max-height: 20vh;
+    	overflow: hidden;
+    	a img {
+    		min-width: 100%;
+    	}
+    }
+    .article-header {
+    	height: 75px;
+    	padding: 1em 0;
+    	h3 {
+		font-size: 1em;
+		}
+	}
+	#news-card-button {
+		margin: 1em 0;
+	}
+}
+#pg-news-cards:hover { 
+    box-shadow: 5px 5px $pregel-blue;
+    .news-card-img {
+		background-color: black;
+		border-style: inset;
+        border: $pregel-light-gray solid 2px; 
+    }
+    img {
+		opacity: 0.8;
+    }
+}
+#news-navigation {
+	float: left;
+}
+/* Single Article Page */
+#pg-single-article-banner-container {
+	min-height: 267px;
+	margin: 1em auto;
+}
+#article-image-banner-container {
+	float: left;
+}
+/*********************
+LOCATIONS PAGE STYLES
+*********************/
+#pg-locations-section {
+	min-height: 300px;
+	#location-links {
+		padding-top: 2em;
+	}
+	#region-title {
+		border-bottom: $pregel-blue solid 2px;
+	}
+}
+/*********************
+EVENTS PAGE STYLES
+*********************/
+.post-type-archive-event_type #pg-about-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/EVENTS_EventsPagev2_Header_iso.png");	
+}
+#events-container {
+	min-height: 300px;
+}
+#tradeshows-title {
+	border-bottom: $pregel-blue solid 2px;
+}
+#event-blurb {}
+#event-cat-sidebar {
+	list-style: none;
+}
+#single-event-container {
+	margin: 2.5em 0 2.5em;
+}
+#event-title {
+	border-bottom: $pregel-blue solid 2px;
+}
+#event-img-container {
+	padding: 2em;
+}
+#event-description {
+	padding: 2em;
+}
+#event-date {
+	margin: .5rem auto;
+}
+#event-time {
+	margin: .5rem auto;
+	font-weight: bold;
+}
+#event-booth {
+	margin: .5rem auto;
+	font-weight: bold;
+}
+#event-blurb {
+	margin: .5rem auto;
+}
+#event-url {
+	p {
+		a {
+			border-bottom: solid 1px $pregel-blue; 
+		}
+	}
+}
+/*********************
+RESOURCE PAGE STYLES
+*********************/
+/*  Main Resources Page  */
+.page-id-49 #pg-about-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/ABOUTUS_History_Header_iso.png");
+}
+/*********************
+VIDEO PAGE STYLES
+*********************/
+.mxYouTubeR_playlist {
+	padding: 2em 0;
+}
+#playlist-title {
+	border-bottom: $pregel-blue solid 2px;
+}
+.mxyt-playlist-item {
+	box-shadow: none;
+}
+.mxyt-title {
+	background: $pregel-mid-blue;
+	height: 50px;
+	font-family: "futura-pt", sans-serif;
+	h1 {
+		color: $white !important;
+		font-size: 14px !important;
+		font-weight: bold !important;
+	}
+	h3 {
+		color: $white !important;
+		font-size: 14px !important;
+		font-weight: bold !important;
+	}
+}
+.mxyt-title:hover {
+	background: $pregel-blue;
+}
+.mxyt-description {
+	display: none !important;
+}
+.mxyt-more .mxyt-button {
+	border-top: $pregel-blue 1px solid;
+	color: $pregel-blue;
+	padding: 2px 100px 0;
+	font-size: 1.25rem;
+	font-family: "futura-pt", sans-serif;
+}
+/*********************
+LOCATIONS STYLE
+*********************/
+.page-id-55 #pg-about-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/ABOUTUS_History_Header_iso.png");
+}
+.locations-social {
+	list-style: none;
+	li {
+		display: inline-block;
+		a i {
+			font-size: 3em;
+            color: $pregel-blue;
+		}
+	}
+}
+/*********************
+DOWNLOAD STYLES
+*********************/
+.page-id-1112 #pg-about-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/EVENTS_EventsPage_Header_iso.png");
+}
+#pg-collateral-cards {
+    margin: 1em auto;
+    height: 525px;
+    #collateral-title {
+    	margin: 1rem auto;
+    	height: 70px;
+    }
+    #collateral-card-img-container {
+    	margin: 1rem auto;
+    	height: 300px;
+    }
+    .collateral-card-img {
+    	
+    }
+    #download-button {
+    	margin: 1rem auto;
+    	float: left;
+    }
+    #collateral-description {
+    	margin: 1rem auto;
+    }
+}
+#collateral-cat-sidebar {
+	list-style: none;
+	/* display: inline-flex; */
+	li {
+		margin: .5em;
+	}
+}
+#collateral-cat-li {
+	margin: 0.5em auto;
+}
+#collateral-cat-button {
+	margin: 1em;
+}
+/*********************
+CUSTOMER SUPPORT PAGE STYLES
+*********************/
+/* Customer Support */
+.page-id-27 #pg-about-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/ABOUTUS_VisionAndValues_Header_iso.png");
+} 
+.page-id-29 #pg-about-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/SERVICES_CUSTOMERSUPPORT_Header_iso.png");
+} 
+/* Private Label */
+.page-id-134 #pg-about-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/SERVICES_PrivateLabel_Header_iso.png");
+}
+/* Food Science */ 
+.page-id-136 #pg-about-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/EVENTS_EventsPage_Header_iso.png");
+}
+/* Customer Support */ 
+.page-id-138 #pg-about-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/SERVICES_CUSTOMERSUPPORT_Header_iso.png");
+} 
+/* Quality Insurance and Food safety */
+.page-id-561 #pg-about-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/SERVICES_QualityInsuranceFoodSafety_Header_iso.png");
+}
+/* FAQ */
+.page-id-665 #pg-about-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/SERVICES_ResearchDevelopment_Header_iso.png");
+}
+#sidebar-help {
+	border-top: 2em $pregel-blue solid;
+	background-color: $pregel-light-gray;
+	margin: 1em auto;
+	.search-field {
+		margin-top: 1rem;
+		padding-top: .85rem;
+		width: 100% !important;
+	}
+	.screen-reader-text {}
+	.search-field:focus {
+		border-color: $pregel-blue;
+	}
+	.postform {
+		outline-color: $pregel-blue;
+	}
+	.textwidget {
+		padding: 1em 0;
+	}
+}
+/*********************
+FAQ PAGE
+*********************/
+#faq-toggle-1 {
+	display: none;
+    margin: 3rem auto; 			
+}
+#faq-toggle-2 {
+	display: none;
+    margin: 3rem auto; 
+}
+#faq-toggle-3 {
+	display: none;
+    margin: 3rem auto; 
+}
+#faq-toggle-4 {
+	display: none;
+    margin: 3rem auto; 
+}
+.faq-a {
+	margin: 1rem 0;
+}
+.latin-ul {
+	list-style-type: upper-alpha;
+}
+/*********************
+Open a Gelato Shop PAGE
+*********************/
+#pg-about-section-banner-video {
+	height: 640px;
+}
+/*********************
+SEARCH RESUSLTS PAGE
+*********************/
+.search #pg-about-banner {
+	background-image: url("https://pregel3.com/wp-content/themes/pregel/assets/images/ABOUTUS_VisionAndValues_Header_iso.png");
+}
+#search-container {
+	border-bottom: $pregel-blue solid 2px;
+	margin: 3rem auto;
+	h3{
+		margin: 2rem auto;
+	}
+	p {
+		margin: 2rem auto;	
+	}
+}
+#article-pagination {
+	margin: 3rem auto;
+}
+
+// *** end legacy styles moved from old main *** //
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+.page-title {
+	
+	// Remove Foundation vcard styling from author page titles
+	.vcard {
+		border: 0px;
+		padding: 0px;
+	}
+}
+
+// Post meta  
+.byline {
+	color: #999;
+	time {}
+}
+
+// Entry content  
+.entry-content {
+	
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	.alignleft, img.alignleft { 
+		margin-right: 1.5em; 
+		display: inline; 
+		float: left; 
+	}
+	.alignright, img.alignright { 
+		margin-left: 1.5em; 
+		display: inline; 
+		float: right; 
+	}
+	.aligncenter, img.aligncenter { 
+		margin-right: auto; 
+		margin-left: auto; 
+		display: block; 
+		clear: both; 
+	}
+			
+	video, object {
+		max-width: 100%;
+		height: auto;
+		}
+
+	pre {
+		background: #eee;
+		border: 1px solid #cecece;
+		padding: 10px;
+		}
+
+} 
+
+.wp-caption {
+	max-width: 100%;
+	background: #eee;
+	padding: 5px;
+
+	// Images inside wp-caption  
+	img {
+		max-width: 100%;
+		margin-bottom: 0;
+		width: 100%;
+	}
+
+	p.wp-caption-text {
+		font-size: 0.85em;
+		margin: 4px 0 7px;
+		text-align: center;
+	}
+} 
+
+// Add Foundation styling to password protect button
+.post-password-form input[type="submit"] {
+	@include button;
+}
+
+/*********************
+IMAGE GALLERY STYLES
+*********************/
+.gallery {
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-right: -15px;
+	margin-left: -15px; 
+}
+.gallery::before, .gallery::after {
+	content: ' ';
+	display: table; 
+}
+.gallery::after {
+	clear: both; 
+}
+.gallery.gallery-columns-1 > dl {
+	@include grid-column;
+}
+.gallery.gallery-columns-2 > dl {
+	@include grid-column(1 of 2);
+}
+.gallery.gallery-columns-3 > dl {
+	@include grid-column(1 of 3);
+}
+.gallery.gallery-columns-4 > dl {
+	@include grid-column(1 of 4);
+}
+.gallery.gallery-columns-5 > dl {
+	@include grid-column(1 of 5);
+}
+.gallery.gallery-columns-6 > dl {
+	@include grid-column(1 of 6);
+}
+.gallery.gallery-columns-7 > dl {
+	@include grid-column(1 of 7);
+}
+.gallery.gallery-columns-8 > dl {
+	@include grid-column(1 of 8);
+}
+.gallery dl {
+	width: 100%;
+	float: left;
+	padding-left: 0.9375rem;
+	padding-right: 0.9375rem; 
+}
+.gallery dl:last-child:not(:first-child) {
+  float: right; 
+ }
+
+// Gallery caption styles
+.gallery-caption {}
+.size-full {}
+.size-large {}
+.size-medium {}
+.size-thumbnail {}
+
+/*********************
+PAGE NAVI STYLES
+*********************/
+.page-navigation {
+	margin-top: 1rem;
+}
+
+/*********************
+COMMENT STYLES
+*********************/
+#comments {
+	.commentlist {
+		margin-left: 0px;
+	}
+}
+
+#respond {
+	ul {
+		margin-left: 0px;
+	}
+}
+
+.commentlist {
+	li {
+		position: relative;
+		clear: both;
+		overflow: hidden;
+		list-style-type: none;
+		margin-bottom: 1.5em;
+		padding: 0.7335em 10px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		ul.children {
+			margin: 0;
+
+			li {}
+
+			.comment {}
+			.alt {}
+			.odd {}
+			.even {}
+			.depth-1 {}           // Change number for different depth  
+			.byuser {}
+			.bypostauthor {}
+			.comment-author-admin {}
+
+		}
+	}
+
+	li[class*=depth-] {
+		margin-top: 1.1em;
+	}
+
+	li.depth-1 {
+		margin-left: 0;
+		margin-top: 0;
+	}
+
+	li:not(.depth-1) {
+		margin-left: 10px;
+		margin-top: 0;
+		padding-bottom: 0;
+	}
+
+	li.depth-2 {}
+	li.depth-3 {
+	}
+	li.depth-4 {}
+	li.depth-5 {}
+
+	// General comment classes  
+	.alt {}
+	.odd {
+	}
+	.even {
+	}
+	.parent {}
+	.comment {}
+	.children {}
+	.pingback {}
+	.bypostauthor {}
+	.comment-author {}
+	.comment-author-admin {}
+	.thread-alt {}
+	.thread-odd {}
+	.thread-even {}
+
+	// vcard  
+	.vcard {
+		margin-left: 50px;
+
+		cite.fn {
+			font-weight: 700;
+			font-style: normal;
+
+			a.url {}
+
+		}
+
+		time {
+			float: right;
+
+			a {
+				color: #999;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+
+			}
+
+		}
+
+		img.photo {}
+
+		img.avatar {
+			position: absolute;
+			left: 10px;
+			padding: 2px;
+			border: 1px solid #cecece;
+			background: #fff;
+		}
+
+	} // end .commentlist .vcard  
+
+
+	// comment meta  
+	.comment-meta {
+
+		a {}
+
+	}
+
+	.commentmetadata {
+
+		a {}
+
+	}
+
+	// comment content  
+	.comment_content {
+
+		p {
+			margin: 0.7335em 0 1.5em;
+			font-size: 1em;
+			line-height: 1.5em;
+		}
+
+	} // end .commentlist .comment_content  
+
+	// comment reply link  
+	.comment-reply-link {
+		float: right;
+
+		&:hover,
+		&:focus {
+		
+		}
+
+	} // end .commentlist .comment-reply-link  
+
+} // end .commentlist  
+
+/*********************
+COMMENT FORM STYLES
+*********************/
+.respond-form {
+	margin: 1.5em 10px;
+	padding-bottom: 2.2em;
+
+	form {
+		margin: 0.75em 0;
+
+		li {
+			list-style-type: none;
+			clear: both;
+			margin-bottom: 0.7335em;
+
+			label,
+			small {
+				display: none;
+			}
+		}
+
+		input[type=text],
+		input[type=email],
+		input[type=url],
+		textarea {
+			padding: 3px 6px;
+			background: #efefef;
+			border: 2px solid #cecece;
+			line-height: 1.5em;
+
+			&:focus {
+				background: #fff;
+			}
+
+			// form validation  
+			&:invalid {
+				outline: none;
+				border-color: #fbc2c4;
+				background-color: #f6e7eb;
+				-webkit-box-shadow: none;
+				   -moz-box-shadow: none;
+				    -ms-box-shadow: none;
+						box-shadow: none;
+			}
+		}
+
+		input[type=text],
+		input[type=email],
+		input[type=url] {
+			max-width: 400px;
+			min-width: 250px;
+		}
+
+		textarea {
+			resize: none;
+			width: 97.3%;
+			height: 150px;
+		}
+
+	}
+}
+
+// comment form title  
+#comment-form-title {
+	margin: 0 0 1.1em;
+}
+
+// cancel comment reply link  
+#cancel-comment-reply {
+	a {}
+}
+
+// logged in comments  
+.comments-logged-in-as {}
+
+// allowed tags  
+#allowed_tags {
+	margin: 1.5em 10px 0.7335em 0;
+}
+
+// No comments  
+.nocomments {
+	margin: 0 20px 1.1em;
+}
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+.sidebar {
+	li{
+		list-style: none;
+	}
+}
+
+.widget {
+	ul {
+		margin: 0;
+	}
+}
+/*********************
+FOOTER STYLES
+*********************/
+// .footer {
+// 	clear: both;
+// 	margin-top: 1em;
+// }
+.footer {
+	background: $white;
+	color: $pregel-blue;
+	border-top: $pregel-blue solid 4px;
+	padding: 1rem 0;
+	#subsidiaries-row {
+		height: 50px;
+		#global-button {
+			background: white;
+    		color: $pregel-blue;
+    		border: $pregel-blue solid 1px;
+    		padding: .25rem;
+		}
+		#globe {
+			padding-left: 0px;
+    		padding-right: 0px;
+		}
+		#global-img {
+			width: 40px;
+			height: 40px;
+			margin: 0 auto;
+ 			background-image:url(https://pregel3.com/wp-content/themes/pregel/assets/images/GLOBE_ICON-05.png);
+ 			background-size: cover;
+ 			background-position: center;
+ 			background-repeat: no-repeat;
+ 		}
+ 		#global-text {
+ 			margin: 13px auto;
+ 			font-size: 0.8rem;
+    		padding-left: 0px;
+    		padding-right: 0px;
+ 		}
+	}
+	.call-to-action-row {
+		height: 100px;
+	}
+	#footer-input {
+		background: $pregel-light-blue !important;
+	}
+	#menu-footer {
+		display: inline-block;
+		a {
+		color: $pregel-blue;
+		font-family: $header-font-family;
+		font-size: 16px;
+	}
+	}
+	ul.footer-social {
+		list-style: none;
+		li {
+			display: inline-block;
+			a {
+			font-size: 3em;
+			color: $pregel-blue;
+		    }
+		    a:hover {
+		    	opacity: 0.9;
+		    }
+	   }
+	}
+	ul.footer-links {
+		list-style: none;
+		li {
+			display: block;
+			a {
+			font-size: 1.25em;
+			color: $pregel-blue;
+		    }
+		    a:hover {
+		    	opacity: 0.9;
+		    }
+	    }
+	}
+}
+	#bottom-footer {
+		// background: $pregel-mid-blue;
+		background: $pregel-blue;
+		color: $white;
+		#footer-contact-info {
+			font-size: small;
+			margin: .5rem 0;
+			p {
+				border-right: white solid 1px;
+				margin-bottom: 0.5rem;
+			}
+			p:last-child {
+				border-right: none;
+			}
+		}
+		#copyright {
+			font-size: small;
+		}
+	}
+
+/*********************
+404 STYLES
+*********************/
+#fourOfour-img {
+	background: url('https://pregel3.com/wp-content/themes/pregel/assets/images/whoops.jpg') no-repeat;
+	background-size: contain;
+	height: 800px;
+	margin: 3rem auto;
+}
+	
+/*********************
+VISUAL EDITOR STYLES
+*********************/
+// Makes content look better in visual editor
+body#tinymce {
+   	margin: 20px;
+}
+
+/*********************
+PLUGIN STYLES
+*********************/
+// Makes Gravity Forms play nice with Foundation Form styles
+.gform_body ul {
+    list-style: none outside none;
+    margin: 0;
+}
+/*********************
+PARDOT STYLES
+*********************/
+#pardot-form {
+  .cta-button {
+	.button {
+		background-color: $pregel-mid-blue;
+    	border-color: $pregel-blue;
+    	border-radius: 1%;
+	}
+  }
+}
+
+/* *** needs refactoring - legacy media queries *** */
+/*********************
+MEDIA BREAKS
+*********************/
+@media (min-width: 2000px) {
+	// #product-bar .link {
+	// 	padding: 4% 0 4% 6%;
+	// }
+	#product-bar h3 {
+		font-size: 2.5rem;
+	}
+	.pg-text-overlay p {
+		font-size: 1.25rem;
+	}
+}
+@media (min-width: 1400px) and (max-width: 1999px) {
+	#product-bar h3 {
+		 font-size: 2rem;
+	}
+}
+@media (min-width: 530px) and (max-width: 1399px) {
+	#product-bar h3 {
+		 font-size: 1.5rem;
+	}
+	.homeGrid h4.widgettitle {
+		font-size: 1.25rem;
+	}
+}
+@media (max-width: 1215px) {
+	.form-search .input-text { 
+		width: 70px;
+	}
+}
+@media (min-width: 1125px) and (max-width: 1300px) {
+	.pg-text-overlay p {
+		font-size: .8em;
+	}
+}
+@media (min-width: 1024px) and (max-width: 1124px) {
+	.pg-text-overlay p {
+		font-size: .7em;
+		padding-left: 0.5em;
+	}
+}
+@media (max-width: 1024px) {
+	#home-top-banner {
+	height: 340px;
+	}
+	.homeGrid {
+    border: 10px solid #fff;
+	}
+	#product-bar .link {
+			border: $white solid 1px;
+			//padding: 4% 0 4% 4%;
+		}
+ 	#call-to-action-row {
+		h4 {
+			font-size: 1.5rem;
+		}
+    }
+	#right-footer-links {
+		display: none;
+	}
+	#bottom-footer {
+		#footer-contact-info {
+		p {
+			border-right: none;
+		}
+	  }
+	}
+	.article-sidebar:last-child:not(:first-child) {
+	float: none !important;
+    }
+	.search .columns:last-child:not(:first-child) {
+	float: none !important;
+    }	
+    .form-search .input-text { 
+		width: 200px;
+	}
+}
+@media (max-width: 900px) {
+	#pg-about-section-banner-video {
+		height: 550px;
+	}
+	#pg-single-article-banner-container {
+	min-height: 200px;
+	margin: 1em auto;
+}
+}
+@media (max-width: 768px) {
+	#pg-about-banner-container {
+		height: 200px;
+		margin-top: 3rem
+	}
+	#pg-about-banner {
+		height: 200px;
+	}
+	#testimonal-quote {
+	padding: 2em;
+    }
+	#call-to-action-row {
+		input {
+			font-size: .9rem;
+		}
+    }
+    ul.footer-social {
+		li {
+			a i {
+			font-size: 2.25rem;
+		    }
+	   }
+	}
+	#pg-about-section-banner-video {
+		height: 500px;
+	}
+	#pg-news-cards .news-card-img-container {
+		height: 150px;
+	}
+	.homeGrid h4.widgettitle {
+		font-size: 1rem;
+	}
+}
+@media (max-width: 700px) {
+	#pg-collateral-cards {
+		height: 425px;
+	}
+	#collateral-card-img-container {
+		height: 250px !important;
+	}
+}	   
+@media (max-width: 650px) {
+	#call-to-action-row {
+		h4 {
+			font-size: 1.1rem;
+		}
+	}
+	#pg-about-section-banner-video {
+		height: 450px;
+	}
+	#pg-news-cards {
+		height: 300px;
+	}
+	#pg-news-cards .article-header h3 {
+		font-size: .75em;
+	}
+	#pg-news-cards .news-card-img-container {
+		height: 90px;
+	}
+}
+@media (max-width: 600px) {
+	#pg-collateral-cards {
+		height: 400px;
+	}
+	#collateral-card-img-container {
+		height: 200px !important;
+		overflow: hidden;
+	}
+}
+@media (max-width: 600px) {
+	#product-bar .link {
+		height: auto;
+    }
+}
+@media (max-width: 530px) {
+	#call-to-action-row {
+		h4 {
+			font-size: 1.25rem;
+		}
+		input {
+			font-size: 1rem
+		}
+    }
+    #pg-about-section-banner-video {
+		height: 375px;
+	}
+}
+@media (max-width: 512px) {
+	#intro {
+		display: none;
+	}
+	.smalltext {
+		font-size: 1em;
+	}
+	#pg-news-cards .article-header h3 {
+		font-size: .85em;
+		height: 100px;
+	}
+	#pg-news-cards .news-card-img-container {
+		height: 110px;
+	}
+}
+@media only screen and (max-width: 430px) {
+	.pg-text-overlay p {
+		font-size: .7em;
+		padding-left: 0.5em;
+	}
+}
+@media only screen and (max-width: 414px) {
+	#pg-about-banner-container {
+		margin-top: 1rem
+	}
+	#subsidiaries-row #global-text {}
+	#footer-button-column {
+		padding: 0;
+	}
+	ul.footer-social li a i {
+		font-size: 2.25rem;
+	}
+		#pg-about-section-banner-video {
+		height: 300px;
+	}
+}
+@media only screen and (max-width: 360px) {
+	#collateral-card-container {
+		height: 3400px;
+	}
+	#pg-collateral-cards {
+		height: 300px;
+	}
+	#collateral-title {
+    	height: 42px !important;
+    }
+	#collateral-card-img-container {
+		height: 150px !important;
+		overflow: hidden;
+	}
+}
+@media only screen and (max-width: 320px) {
+	#pg-single-article-banner-container {
+  	min-height: 150px;
+    }
+    #collateral-title {
+    	height: 40px !important;
+    }
+	#pg-collateral-cards {
+		height: 300px;
+	}
+	#collateral-card-img-container {
+		height: 150px !important;
+		overflow: hidden;
+	}
+	.pg-text-overlay p {
+		font-size: .6em;
+	}
+}
